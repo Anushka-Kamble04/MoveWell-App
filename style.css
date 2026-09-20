@@ -1,0 +1,489 @@
+/* =========================
+   1. Universal Reset
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   2. Color Palette
+   ========================= */
+
+:root {
+    --brown: #57401E;
+    --beige: #B9A287;
+    --light-beige: #E1D0BC;
+    --vanilla: #E9E4D9;
+    --pista: #99b185;
+    --white: #FFFFFF;
+}
+
+
+/* =========================
+   3. Body
+   ========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--light-beige);
+    color: var(--brown);
+}
+
+
+/* =========================
+   4. Header
+   ========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 40px 50px;
+
+    background-color: var(--vanilla);
+}
+
+.logo {
+    font-size: 30px;
+    color: var(--pista);
+    
+}
+/* =========================
+   5. Navigation
+   ========================= */
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--brown);
+}
+
+.hamburger {
+    display: none;
+}
+/* =========================
+   6. Header Button
+   ========================= */
+
+header .nav-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--brown);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    color: var(--brown);
+    cursor: pointer;
+}
+
+/* =========================
+   7. Hero Section
+   ========================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: var(--vanilla);
+}
+
+
+/* Hero Image */
+
+.hero-left {
+    min-height: 600px;
+}
+
+.hero-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Hero Content */
+
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 60px;
+}
+
+
+/* Hero Headings */
+
+.hero-right h2 {
+    font-size: 20px;
+    font-weight: 500;
+
+    color: var(--beige);
+
+    margin-bottom: 15px;
+}
+
+.hero-right h1 {
+    font-size: 56px;
+    line-height: 1.1;
+
+    color: var(--pista);
+
+    margin-bottom: 20px;
+}
+
+
+/* Hero Paragraph */
+
+.hero-right p {
+    max-width: 550px;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    color: var(--brown);
+
+    margin-bottom: 30px;
+}
+
+
+/* Hero Buttons */
+
+.hero-btn {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.hero-btn a,
+.hero-btn button {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* Primary CTA */
+
+.hero-btn button {
+    border: none;
+
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+
+/* Secondary CTA */
+
+.hero-btn a {
+    border: 2px solid var(--brown);
+
+    color: var(--brown);
+    background-color: transparent;
+}
+
+.hero-btn button:hover {
+    background-color: var(--vanilla);
+    color: var(--brown)
+}
+
+.hero-btn a:hover {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+/* =========================
+   9. About Section
+   ========================= */
+
+.about {
+    padding: 80px 50px;
+    background-color: var(--light-beige);
+}
+
+.about-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 90px;
+    background-color: var(--vanilla);
+}
+
+.about-left h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--beige);
+    margin-bottom: 15px;
+}
+
+.about-left h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--pista);
+}
+
+.about-right p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--brown);
+    margin-bottom: 25px;
+}
+
+.about-right a {
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.services {
+    padding: 80px 50px;
+    background-color: var(--vanilla);
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+.service-card {
+    background-color: var(--light-beige);
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 13px rgba(87, 64, 30, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.02);
+    border-color: var(--beige);
+    box-shadow: 0 8px 20px rgba(87, 64, 30, 0.15);
+}
+.service-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.service-card h3 {
+    padding: 20px;
+    font-size: 20px;
+    color: var(--brown);
+    text-align: center;
+}
+
+.services-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.services-heading p {
+    font-size: 18px;
+    color: var(--beige);
+    margin-bottom: 10px;
+}
+
+.services-heading h2 {
+    font-size: 42px;
+    color: var(--pista);
+}
+
+.services > a {
+    color: var(--brown);
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    border-bottom: 2px solid var(--brown);
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.services > a:hover {
+    color: var(--pista);
+    border-color: var(--pista);
+}
+
+/* =========================
+   11. Why Choose Section
+   ========================= */
+
+.why-choose {
+    padding: 40px 50px 80px;
+    background-color: var(--vanilla);
+}
+
+.why-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.why-heading p {
+    font-size: 18px;
+    color: var(--beige);
+    margin-bottom: 10px;
+}
+
+.why-heading h2 {
+    font-size: 42px;
+    color: var(--pista);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.why-item {
+    padding: 20px;
+    /* border-top: 2px solid var(--beige); */
+}
+
+.why-item span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 16px;
+    color: var(--vanilla);
+    margin-bottom: 20px;
+    background-color: var(--pista);
+}
+
+
+.why-item h3 {
+    font-size: 22px;
+    color: var(--brown);
+    margin-bottom: 15px;
+}
+
+.why-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--brown);
+}
+/* =========================
+   8. Responsive Design
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* Header */
+
+
+    .navlinks, .nav-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-left {
+        min-height: 400px;
+    }
+
+    .hero-right {
+        padding: 40px 25px;
+    }
+
+    .hero-right h1 {
+        font-size: 42px;
+    }
+
+    .hero-right p {
+        font-size: 16px;
+    }
+
+    .about {
+    padding: 50px 20px;
+}
+
+.about-card {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 35px 25px;
+}
+
+.about-left h1 {
+    font-size: 36px;
+}
+
+.about-right p {
+    font-size: 16px;
+}
+
+.services {
+    padding: 50px 20px;
+}
+
+.services-heading h2 {
+    font-size: 34px;
+}
+
+.services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+.service-card img {
+    height: 240px;
+}
+
+.why-choose {
+    padding: 50px 20px;
+}
+
+.why-heading h2 {
+    font-size: 34px;
+}
+
+.why-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+}
+}
