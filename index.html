@@ -12,20 +12,41 @@
                 <!-- <img src="" alt="logo"/> -->
                  
                  <p class="logo"><strong>M</strong>ove<strong>W</strong>ell</p>
-
-                <nav class="navlinks">
+<div class="mobile-menu">
+<nav class="navlinks">
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
 
-                <button class="nav-btn">Book an Appointment</button>
+                <button class="nav-btn appointment-btn">Book an Appointment</button>
+</div>
 
-                <button class="hamburger" aria-label="Open navigation">☰</button>
+<div class="off-screen-menu">
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
+    <button class="nav-btn appointment-btn">Book an Appointment</button>
+</div>
+<nav class="ham-nav">
+
+
+    <div class="ham-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+                
+
+                 
             </header>
 <!-- hero section -->
             <section class="hero">
@@ -37,13 +58,13 @@
                     <h1>Move Better. Live Better.</h1>
                     <p>Professional physiotherapy and rehabilitation services in Aundh, Pune, for pain management, injury recovery, and improved mobility.</p>
                     <div class="hero-btn"> 
-                    <button>Book an Appointment</button>
+                    <button class="appointment-btn">Book an Appointment</button>
                     <a href="#">Explore Services</a>
                     </div>
                 </div>
             </section>
 <!-- about section -->
-            <section class="about">
+            <section class="about" id="about">
 
     <div class="about-card">
 
@@ -61,7 +82,7 @@
     </div>
     </section>
 <!-- services section -->
-    <section class="services">
+    <section class="services" id="services">
 
     <div class="services-heading">
         <p>OUR SERVICES</p>
@@ -141,7 +162,7 @@
 </div>
  </section>
 <!-- our teams section -->
- <section class="team">
+ <section class="team" id="team">
     <div class="team-heading">
         <p>OUR PHYSIOTHERAPISTS</p>
         <h2>Meet Your Rehabilitation Team</h2>
@@ -171,7 +192,7 @@
 </div>
  </section>
 <!-- How it works section -->
- <section class="how-it-works">
+ <section class="how-it-works" id="how-it-works">
 
     <div class="how-heading">
         <p>HOW IT WORKS</p>
@@ -230,12 +251,12 @@
         <p>READY TO MOVE BETTER?</p>
         <h2>Take the Next Step Toward Better Movement</h2>
         <p>Get personalized physiotherapy and rehabilitation support tailored to your needs.</p>
-        <button>Book an Appointment</button>
+        <button class="appointment-btn">Book an Appointment</button>
     </div>
 </section>
 
 <!-- footer section -->
- <footer class="footer">
+ <footer class="footer" id="contact">
 
     <div class="footer-content">
 
@@ -260,11 +281,11 @@
 
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">How It Works</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
 
@@ -364,5 +385,97 @@
     </div>
 
 </footer>
+
+<div class="appointment-modal">
+    <div class="appointment-modal-content">
+        <button class="modal-close">&times;</button>
+  <div class= "appointment-form-container">
+
+    <h2>Book an Appointment</h2>
+
+    <p>Request an appointment with our physiotherapy team.</p>
+
+    <form class="appointment-form">
+
+        <label for="name">Full Name</label>
+
+<input 
+    type="text" 
+    id="name" 
+    name="name"
+>
+<p class="form-error" id="name-error"></p>
+<label for="phone">Phone Number</label>
+
+<input 
+    type="tel" 
+    id="phone" 
+    name="phone"
+>
+
+<p class="form-error" id="phone-error"></p>
+
+<label for="email">Email Address</label>
+
+<input 
+    type="email" 
+    id="email" 
+    name="email"
+>
+<p class="form-error" id="email-error"></p>
+<label for="service">Select Service</label>
+
+<select id="service" name="service">
+    <option value="">Choose a service</option>
+    <option value="general-physiotherapy">General Physiotherapy</option>
+    <option value="sports-injury">Sports Injury Rehabilitation</option>
+    <option value="post-surgery">Post-Surgery Rehabilitation</option>
+    <option value="back-neck-pain">Back & Neck Pain Therapy</option>
+    <option value="strength-mobility">Strength & Mobility Training</option>
+    <option value="geriatric">Geriatric Physiotherapy</option>
+</select>
+<p class="form-error" id="service-error"></p>
+<label for="date">Preferred Date</label>
+
+<input 
+    type="date" 
+    id="date" 
+    name="date"
+>
+<p class="form-error" id="date-error"></p>
+<label for="time">Preferred Time</label>
+
+<input 
+    type="time" 
+    id="time" 
+    name="time"
+>
+<p class="form-error" id="time-error"></p>
+<label for="message">Message (Optional)</label>
+
+<textarea 
+    id="message" 
+    name="message" 
+    rows="4"
+></textarea>
+
+<button type="submit">Request Appointment</button>
+
+</form>
+
+</div>
+<div class="appointment-success">
+    <h2>Appointment Request Received</h2>
+    <p>
+        Thank you! We've received your appointment request
+        and will contact you to confirm the details.
+    </p>
+</div>
+</div>
+
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
