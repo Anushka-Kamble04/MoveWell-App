@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
 /* =========================
    2. Color Palette
    ========================= */
@@ -46,7 +50,7 @@ header {
 }
 
 .logo {
-  font-size: 30px;
+  font-size: 40px;
   color: var(--pista);
 }
 /* =========================
@@ -64,6 +68,11 @@ nav ul {
 nav a {
   text-decoration: none;
   color: var(--brown);
+  font-size: 17px;
+}
+
+nav a:hover {
+text-decoration: underline;
 }
 
 .mobile-menu {
@@ -81,6 +90,9 @@ nav a {
   display: none;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
 /* =========================
    6. Header Button
    ========================= */
@@ -92,7 +104,15 @@ header .nav-btn {
   background-color: var(--brown);
   color: var(--white);
   cursor: pointer;
+  font-size: 15px;
 }
+
+header .nav-btn:hover {
+  background-color: var(--vanilla);
+  color: var(--brown);
+}
+
+
 
 .hamburger {
   display: none;
@@ -266,8 +286,15 @@ header .nav-btn {
   color: var(--brown);
   text-decoration: none;
   font-weight: 600;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+    border-bottom: 2px solid var(--brown);
 }
-
+.about-right a:hover {
+  color: var(--pista);
+  border-color: var(--pista);
+}
 /* services section */
 
 .services {
@@ -832,6 +859,40 @@ header .nav-btn {
     line-height: 1.6;
     font-size: 15px;
 }
+
+.back-to-top {
+    position: fixed;
+    right: 635px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: var(--brown);
+    color: var(--white);
+    opacity: 50%;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+}
+
+.back-to-top.active {
+    display: flex;
+}
+
+.back-to-top:hover {
+    background-color: var(--pista);
+    color: var(--brown);
+}
 /* =========================
    8. Responsive Design
    ========================= */
@@ -853,7 +914,7 @@ header .nav-btn {
     width: 100%;
     max-width: 500px;
     position: fixed;
-    top: 0;
+    top: 100px;
     right: -500px;
     display: flex;
     flex-direction: column;
@@ -871,6 +932,7 @@ header .nav-btn {
 
   .off-screen-menu ul {
     list-style: none;
+    
   }
 
   .off-screen-menu li {
@@ -1096,4 +1158,11 @@ header .nav-btn {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  .back-to-top {
+  right: 50px;
 }
+}
+
+
+

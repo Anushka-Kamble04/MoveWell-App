@@ -26,22 +26,35 @@ timeInput.min = "09:00";
 timeInput.max = "19:00";
 const appointmentSuccess = document.querySelector(".appointment-success");
 const appointmentFormContainer = document.querySelector(".appointment-form-container");
+const navLinks = document.querySelectorAll(".off-screen-menu a");
+const backToTop = document.querySelector(".back-to-top");
 
 // navigation
 hamMenu.addEventListener("click", function () {
   hamMenu.classList.toggle("active");
   offScreenMenu.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
 });
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+        hamMenu.classList.remove("active");
+        offScreenMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+    });
+});
+
 // appintment button
 appointmentButton.forEach((button) => {
   button.addEventListener("click", () => {
-    console.log("Appointment button clicked");
     appointmentModal.classList.add("active");
+    document.body.classList.add("menu-open");
   });
 });
 // appointment close
 modalClose.addEventListener("click", () => {
   appointmentModal.classList.remove("active");
+  document.body.classList.remove("menu-open");
 
     appointmentForm.reset();
 
@@ -121,4 +134,22 @@ if (firstInvalidField === null) {
     appointmentSuccess.style.display = "block";
 }
 
+});
+
+
+window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 400) {
+        backToTop.classList.add("active");
+    } else {
+        backToTop.classList.remove("active");
+    }
+
+});
+
+backToTop.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });
